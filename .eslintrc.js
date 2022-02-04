@@ -5,7 +5,7 @@ module.exports = {
     es6: true,
   },
   plugins: [
-    react
+    'react'
   ],
   extends: 'eslint:recommended', // 相当于规则集合
   // 解释器选项
@@ -18,7 +18,7 @@ module.exports = {
   },
   rules: {
     quotes: ['error', 'single'], // 引号报错
-    semi: ['error', 'always'], // 强制分号结尾
+    // semi: ['error', 'always'], // 强制分号结尾
     'no-unused-vars': 'off', // 关闭规则
   },
 }
