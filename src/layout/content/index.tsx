@@ -1,18 +1,18 @@
 import React from 'react';
 
-import './index.css';
+import './index.less';
 
 
 const Content = () => {
 
   return (
-    <div className="page-container wrapper">
+    <div className="page-container">
       <div className="template-resume">
         {/* 个人信息 */}
           <div className="basic-info">
             {/* 姓名 */}
             <div className="profile">
-              <div className-="profile-info">
+              <div className="profile-info">
                 xxx
               </div>
               <div className="avatar">
