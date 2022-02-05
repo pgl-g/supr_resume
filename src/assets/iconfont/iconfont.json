@@ -1,0 +1,51 @@
+{
+  "id": "3169154",
+  "name": "supr_resume",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1244194",
+      "name": "邮箱",
+      "font_class": "youxiang",
+      "unicode": "e694",
+      "unicode_decimal": 59028
+    },
+    {
+      "icon_id": "1546895",
+      "name": "地址",
+      "font_class": "dizhi",
+      "unicode": "e734",
+      "unicode_decimal": 59188
+    },
+    {
+      "icon_id": "5387648",
+      "name": "电话",
+      "font_class": "dianhua",
+      "unicode": "eb23",
+      "unicode_decimal": 60195
+    },
+    {
+      "icon_id": "7084884",
+      "name": "电话",
+      "font_class": "dianhua1",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "16942384",
+      "name": "职位",
+      "font_class": "zhiwei",
+      "unicode": "e612",
+      "unicode_decimal": 58898
+    },
+    {
+      "icon_id": "23185109",
+      "name": "gitee2",
+      "font_class": "gitee2",
+      "unicode": "e677",
+      "unicode_decimal": 58999
+    }
+  ]
+}

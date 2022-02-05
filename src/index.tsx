@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.less';
+import './assets/iconfont/iconfont.less';
 import App from './page';
 
 ReactDOM.render(

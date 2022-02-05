@@ -13,11 +13,15 @@ const Content = () => {
             {/* 姓名 */}
             <div className="profile">
               <div className="profile-info">
-                xxx
+                <h2 className="info-name">姓名</h2>
+
+                <div className="profile-list">
+                  <div className="mobile">
+                    <span className="iconfont icon-youxiang"></span>
+                  </div>
+                </div>
               </div>
-              <div className="avatar">
-                头像
-              </div>
+              <div className="avatar" />
             </div>
             {/* 教育背景 */}
             <div className="section section-education">
