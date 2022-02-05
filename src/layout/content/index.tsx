@@ -13,11 +13,38 @@ const Content = () => {
             {/* 姓名 */}
             <div className="profile">
               <div className="profile-info">
-                <h2 className="info-name">姓名</h2>
+                <h2 className="info-name">彭格列</h2>
 
                 <div className="profile-list">
-                  <div className="mobile">
-                    <span className="iconfont icon-youxiang"></span>
+                  <div className="list-item">
+                    <span className="iconfont icon-dianhua1" />
+                    <span className="item-info">158********</span>
+                  </div>
+
+                  <div className="list-item">
+                    <span className="iconfont icon-youxiang" />
+                    <span className="item-info">1801688***@qq.com</span>
+                  </div>
+
+                  <div className="list-item">
+                    <span className="iconfont icon-gitee2" />
+                    <a className="item-info" href="https://gitee.com/guxiaobiao">
+                      https://gitee.com/guxiaobiao
+                    </a>
+                  </div>
+
+                  <div className="list-item">
+                    <span className="iconfont icon-dizhi" />
+                    <span className="item-info">杭州</span>
+                  </div>
+
+                  <div className="list-item">
+                    <span className="iconfont icon-zhiwei" />
+                    <span className="item-info">前端开发工程师</span>
+                  </div>
+                  <div className="list-item">
+                    <span className="iconfont icon-dianhua1" />
+                    <span className="item-info">25k</span>
                   </div>
                 </div>
               </div>

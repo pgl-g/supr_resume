@@ -19,9 +19,31 @@
         align-items: center;
 
         .profile-info {
+
+          flex: 1 1;
           .info-name {
             font-size: 24px;
             line-height: 24px;
+          }
+
+          .profile-list {
+            display: flex;
+            flex-wrap: wrap;
+
+            .list-item {
+              flex: 220px 1;
+              margin-bottom: 4px;
+
+              .iconfont {
+                color:rgb(47, 87, 133);
+                opacity: 0.85;
+                font-size: 14px;
+              }
+              .item-info {
+                font-size: 14px;
+                padding-left: 2px;
+              }
+            }
           }
         }
 
