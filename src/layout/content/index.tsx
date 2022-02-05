@@ -5,7 +5,13 @@ import './index.css';
 
 const Content = () => {
 
-  return <div className="container">内容填充</div>
+  return (
+    <div className="page-container wrapper">
+      <div className="template-resume">
+          简历模版
+      </div>
+    </div>
+  )
 }
 
 

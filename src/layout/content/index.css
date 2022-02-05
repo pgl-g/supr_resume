@@ -1,6 +1,16 @@
-.container {
+.page-container {
   width: 100%;
-
-
   height: calc(100vh - 56px);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+}
+
+.wrapper .template-resume {
+  width: 794px;
+  min-height: 942px;
+  box-shadow: 0px 2px 4px 1px rgb(0 0 0 / 15%);
 }
