@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Button } from 'antd';
 import './index.less';
 
 const Content = () => {
@@ -188,6 +189,11 @@ const Content = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* 配置 */}
+      <div className="edit">
+        <Button type="primary">点击</Button>
       </div>
     </div>
   );
