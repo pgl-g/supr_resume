@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button } from 'antd';
+import { Button, Affix } from 'antd';
 import './index.less';
 
 const Content = () => {
@@ -192,9 +192,16 @@ const Content = () => {
       </div>
 
       {/* 配置 */}
-      <div className="edit">
-        <Button type="primary">点击</Button>
-      </div>
+      <React.Fragment>
+        <Affix offsetTop={0}>
+          <Button.Group className="btn-group">
+            <Button type="primary" key={'1'}>进行配置</Button>
+            <Button type="primary" key={'2'}>导入配置</Button>
+            <Button type="primary" key={'3'}>复制配置</Button>
+            <Button type="primary" key={'4'}>下载配置</Button>
+          </Button.Group>
+        </Affix>
+      </React.Fragment>
     </div>
   );
 };
