@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Button, Affix } from 'antd';
+import SilderDrawer from '../../components/silderDrawer';
 import './index.less';
 
 const Content = () => {
@@ -195,7 +196,7 @@ const Content = () => {
       <React.Fragment>
         <Affix offsetTop={0}>
           <Button.Group className="btn-group">
-            <Button type="primary" key={'1'}>进行配置</Button>
+            <SilderDrawer />
             <Button type="primary" key={'2'}>导入配置</Button>
             <Button type="primary" key={'3'}>复制配置</Button>
             <Button type="primary" key={'4'}>下载配置</Button>
