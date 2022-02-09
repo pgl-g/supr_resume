@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { FormItemProps } from 'antd/lib/form'
+
 import { Button, Form, Input } from 'antd';
 
 // 定义外值接口类
@@ -10,7 +12,24 @@ import { Button, Form, Input } from 'antd';
 //   onChange: (v?: any) => void;
 // }
 
-export const FormCreater = (props: { onChange: (v: any) => void; value: string | undefined; }) => {
+export const FormCreater = (
+  props: 
+  { 
+    onChange: (v: any) => void; 
+    value: {
+      [k: string]: any
+    }; 
+    config: Array<{
+      key: string;
+      type: string;
+      attributeId: string;
+      displayName: string;
+      formItemProps?: FormItemProps;
+      cfg?: {
+        [k: string]: any // 其他配置
+      }
+    }>
+  }) => {
 
   const [fields, setFilds] = useState([]);
 
@@ -18,6 +37,7 @@ export const FormCreater = (props: { onChange: (v: any) => void; value: string |
     props.onChange(values);
   }
 
+  // console.log(props.config);
   return (
     <Form
       initialValues={[]}
@@ -26,7 +46,7 @@ export const FormCreater = (props: { onChange: (v: any) => void; value: string |
       onFinish={onFinish}
     >
       <Form.Item>
-        <Input placeholder={props.value} />
+        <Input placeholder='xxxx' />
       </Form.Item>
 
       <Form.Item>

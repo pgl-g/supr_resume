@@ -15,12 +15,17 @@ const { Panel } = Collapse;
 const SilderDrawer: React.FC = props => {
   const [visible, setVisible] = useState<boolean>(false);
   
-  // 模版
+
+  // 配置内容
+  const [formListValue, setFormListValue] = useState([]);
+  const [formValue, updateFormValue] = useState({});
+
+  // 模版数据源
   const moudles = useMemo(() => {
     return MOUDLE();
   }, []);
 
-  // 下模版配置
+  // 下拉模版配置
   const configMouldes = useMemo(() => {
     return CONFIG_MOUDLE();
   }, []);
@@ -31,7 +36,25 @@ const SilderDrawer: React.FC = props => {
     console.log(val);
   } 
 
+  // 处理下拉列表事件数据源
+  const handleCollapse = (values: any) => {
+    let result: any = [];
+    let resultValue: any;
+    let copyConfigMouldes = configMouldes.slice();
+    copyConfigMouldes.forEach(item => {
+      if (item.key === values[1]) {
+        result.push(item);
+        resultValue = item;
+      }
+    })
+    updateFormValue({
+      ...resultValue,
+      dataIndex: values[0]
+    });
+    setFormListValue(result);
+  }
 
+  console.log(formValue);
   return (
     <>
       <Button type="primary" onClick={() => setVisible(true)}>
@@ -48,7 +71,7 @@ const SilderDrawer: React.FC = props => {
           moudles.map((item, index) => {
             return (
               <div className="moudle-item" key={index}>
-                <Collapse defaultActiveKey={[]}>
+                <Collapse defaultActiveKey={index} onChange={handleCollapse}>
                   <Panel 
                     header={
                       <span>{item.name}</span>
@@ -61,7 +84,8 @@ const SilderDrawer: React.FC = props => {
                           config.key === item.key ? (
                             <React.Fragment key={idx}>
                               <FormCreater
-                                value={config.displayName}
+                                config={formListValue}
+                                value={formValue}
                                 onChange={v => {
                                   console.log(v)
                                 }}
