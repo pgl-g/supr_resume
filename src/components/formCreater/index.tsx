@@ -3,13 +3,14 @@ import React, { useState } from 'react';
 import { Button, Form, Input } from 'antd';
 
 // 定义外值接口类
-type Props = {
-  // 表单配置内容
-  value: string,
-  onChange: (v: any) => void;
-}
+// TODO：ts报错，可选属性未定义
+// type Props = {
+//   // 表单配置内容
+//   value: string,
+//   onChange: (v?: any) => void;
+// }
 
-export const FormCreater: React.FC<Props> = props => {
+export const FormCreater = (props: { onChange: (v: any) => void; value: string | undefined; }) => {
 
   const [fields, setFilds] = useState([]);
 

@@ -57,11 +57,9 @@ const SilderDrawer: React.FC = props => {
                   >
                     <div className='list-item-value'>
                       {
-                        configMouldes.map((config, idx) => {
-                          if (config.key !== item.key) return;
-                          return (
-                            <React.Fragment>
-                              {/* <div key={idx}>{config.displayName}</div> */}
+                        configMouldes.map((config, idx) => (
+                          config.key === item.key ? (
+                            <React.Fragment key={idx}>
                               <FormCreater
                                 value={config.displayName}
                                 onChange={v => {
@@ -69,8 +67,8 @@ const SilderDrawer: React.FC = props => {
                                 }}
                               />
                             </React.Fragment>
-                          )
-                        })
+                          ) : null
+                        ))
                       }
                     </div>
                   </Panel>
