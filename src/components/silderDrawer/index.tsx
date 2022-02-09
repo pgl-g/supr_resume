@@ -5,6 +5,7 @@ import { Button, Drawer, Collapse, Checkbox } from 'antd';
 
 import { MOUDLE, CONFIG_MOUDLE } from '../../helpers/contant';
 import { RESUME_INFO } from '../../datas/resume';
+import {FormCreater} from '../formCreater';
 import './index.less';
 
 // 折叠面板
@@ -23,6 +24,12 @@ const SilderDrawer: React.FC = props => {
   const configMouldes = useMemo(() => {
     return CONFIG_MOUDLE();
   }, []);
+
+
+  // 处理提交问题
+  const handleSubmit = (val: any) => {
+    console.log(val);
+  } 
 
 
   return (
@@ -53,7 +60,15 @@ const SilderDrawer: React.FC = props => {
                         configMouldes.map((config, idx) => {
                           if (config.key !== item.key) return;
                           return (
-                            <div key={idx}>{config.displayName}</div>
+                            <React.Fragment>
+                              {/* <div key={idx}>{config.displayName}</div> */}
+                              <FormCreater
+                                value={config.displayName}
+                                onChange={v => {
+                                  console.log(v)
+                                }}
+                              />
+                            </React.Fragment>
                           )
                         })
                       }
