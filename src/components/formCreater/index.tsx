@@ -45,10 +45,19 @@ export const FormCreater = (
       onChange={(newfilds: any) => setFilds(newfilds)}
       onFinish={onFinish}
     >
-      <Form.Item>
-        <Input placeholder='xxxx' />
-      </Form.Item>
-
+      {
+        props.config.map(v => {
+          return (
+            <Form.Item
+              key={v.attributeId}
+              name={v.attributeId}
+              label={v.displayName}
+            >
+              xxxx
+            </Form.Item>
+          )
+        })
+      }
       <Form.Item>
         <Button type="primary" htmlType="submit">提交</Button>
       </Form.Item>

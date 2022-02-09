@@ -36,25 +36,25 @@ const SilderDrawer: React.FC = props => {
     console.log(val);
   } 
 
-  // 处理下拉列表事件数据源
+  // 处理下拉列表事件数据源 TODO: 这里有问题
   const handleCollapse = (values: any) => {
     let result: any = [];
     let resultValue: any;
     let copyConfigMouldes = configMouldes.slice();
     copyConfigMouldes.forEach(item => {
-      if (item.key === values[1]) {
+      if (item.key === values[0]) {
         result.push(item);
         resultValue = item;
       }
     })
     updateFormValue({
       ...resultValue,
-      dataIndex: values[0]
+      dataIndex: 0
     });
     setFormListValue(result);
   }
 
-  console.log(formValue);
+  // console.log(formValue);
   return (
     <>
       <Button type="primary" onClick={() => setVisible(true)}>
@@ -71,7 +71,7 @@ const SilderDrawer: React.FC = props => {
           moudles.map((item, index) => {
             return (
               <div className="moudle-item" key={index}>
-                <Collapse defaultActiveKey={index} onChange={handleCollapse}>
+                <Collapse ghost defaultActiveKey={[]} onChange={handleCollapse}>
                   <Panel 
                     header={
                       <span>{item.name}</span>
