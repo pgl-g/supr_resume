@@ -13,7 +13,7 @@ const { Panel } = Collapse;
 
 // 抽屉弹窗
 const SilderDrawer: React.FC = props => {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState<boolean>(false);
   
   // 模版
   const moudles = useMemo(() => {
