@@ -2,7 +2,34 @@
 // 配置简历强类型语法
 export type ResumeConfig = {
 
-
+  avatar?: {
+    src?: string,
+    hidden?: boolean
+  };
+  profile?: {
+    text?: string
+  };
+  educationList?: {
+    text?: string
+  };
+  aboutme?: {
+    text?: string
+  };
+  awardList?: {
+    text?: string
+  };
+  workList?: {
+    text?: string
+  };
+  skillList?: {
+    text?: string
+  };
+  workExpList?: {
+    text?: string
+  };
+  projectList?: {
+    text?: string
+  };
   // 标签名称映射
   titleNameMap?: {
     // 教育背景
@@ -19,5 +46,7 @@ export type ResumeConfig = {
     workList?: string;
     /** 自我介绍 */
     aboutme?: string;
-  }
+    // 头像
+    avatar?: string;
+  };
 }

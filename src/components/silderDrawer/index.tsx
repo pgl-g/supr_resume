@@ -1,27 +1,29 @@
 import React, { useState, useMemo } from 'react';
 
 
-import { Button, Drawer, Collapse, Input } from 'antd';
+import { Button, Drawer, Collapse, Checkbox } from 'antd';
 
-import { MOUDLE } from '../../helpers/contant';
+import { MOUDLE, CONFIG_MOUDLE } from '../../helpers/contant';
+import { RESUME_INFO } from '../../datas/resume';
 import './index.less';
 
 // 折叠面板
 const { Panel } = Collapse;
 
 // 抽屉弹窗
-const SilderDrawer = () => {
+const SilderDrawer: React.FC = props => {
   const [visible, setVisible] = useState(false);
-
-
-  // 事件处理
-  const handleChange = (e: any) => {
-    console.log(e);
-  }
-
+  
+  // 模版
   const moudles = useMemo(() => {
     return MOUDLE();
   }, []);
+
+  // 下模版配置
+  const configMouldes = useMemo(() => {
+    return CONFIG_MOUDLE();
+  }, []);
+
 
   return (
     <>
@@ -36,23 +38,25 @@ const SilderDrawer = () => {
         onClose={() => setVisible(false)}
       >
         {
-          moudles.map((moudle, index) => {
+          moudles.map((item, index) => {
             return (
               <div className="moudle-item" key={index}>
-                <Collapse>
+                <Collapse defaultActiveKey={[]}>
                   <Panel 
                     header={
-                    <Input
-                      placeholder={moudle.name}
-                      bordered={false}
-                      defaultValue={moudle.name}
-                      onChange={() => handleChange}
-                      style={{ padding: 0 }} />
+                      <span>{item.name}</span>
                     }
-                    key="1"
+                    key={item.key}
                   >
                     <div className='list-item-value'>
-                      xxxx
+                      {
+                        configMouldes.map((config, idx) => {
+                          if (config.key !== item.key) return;
+                          return (
+                            <div key={idx}>{config.displayName}</div>
+                          )
+                        })
+                      }
                     </div>
                   </Panel>
               </Collapse>
