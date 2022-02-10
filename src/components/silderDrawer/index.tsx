@@ -36,25 +36,20 @@ const SilderDrawer: React.FC = props => {
     console.log(val);
   } 
 
-  // 处理下拉列表事件数据源 TODO: 这里有问题
+  // 处理下拉列表事件数据源 TODO: 后期优化
   const handleCollapse = (values: any) => {
     let result: any = [];
-    let resultValue: any;
-    let copyConfigMouldes = configMouldes.slice();
-    copyConfigMouldes.forEach(item => {
-      if (item.key === values[0]) {
-        result.push(item);
-        resultValue = item;
-      }
-    })
+    // @ts-ignore
+    result = configMouldes[values]
     updateFormValue({
-      ...resultValue,
+      ...result,
       dataIndex: 0
     });
     setFormListValue(result);
   }
 
-  // console.log(formValue);
+  console.log(formListValue);
+
   return (
     <>
       <Button type="primary" onClick={() => setVisible(true)}>
@@ -67,11 +62,11 @@ const SilderDrawer: React.FC = props => {
         closable={false}
         onClose={() => setVisible(false)}
       >
-        {
-          moudles.map((item, index) => {
-            return (
-              <div className="moudle-item" key={index}>
-                <Collapse ghost defaultActiveKey={[]} onChange={handleCollapse}>
+        <div className="moudle-item">
+          <Collapse ghost accordion onChange={handleCollapse}>
+            {
+              moudles.map(item => {
+                return (
                   <Panel 
                     header={
                       <span>{item.name}</span>
@@ -79,29 +74,20 @@ const SilderDrawer: React.FC = props => {
                     key={item.key}
                   >
                     <div className='list-item-value'>
-                      {
-                        configMouldes.map((config, idx) => (
-                          config.key === item.key ? (
-                            <React.Fragment key={idx}>
-                              <FormCreater
-                                config={formListValue}
-                                value={formValue}
-                                onChange={v => {
-                                  console.log(v)
-                                }}
-                              />
-                            </React.Fragment>
-                          ) : null
-                        ))
-                      }
+                      <FormCreater
+                        config={formListValue}
+                        value={formValue}
+                        onChange={v => {
+                          console.log(v)
+                        }}
+                      />
                     </div>
                   </Panel>
-              </Collapse>
-              </div>
-              )
-          })
-        }
-        
+                )
+              })
+            } 
+          </Collapse>
+        </div>
       </Drawer>
     </>
   )

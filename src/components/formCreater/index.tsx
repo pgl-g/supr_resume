@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { FormItemProps } from 'antd/lib/form'
 
-import { Button, Form, Input } from 'antd';
+import { Button, Form, Input, Checkbox } from 'antd';
 
 // 定义外值接口类
 // TODO：ts报错，可选属性未定义
@@ -12,6 +12,17 @@ import { Button, Form, Input } from 'antd';
 //   onChange: (v?: any) => void;
 // }
 
+// 动态配置 form组件
+const FormItemComponentMap = (type: string) => (
+  props: { value: any; onChange?: (v: any) => void } = { value: null }
+) => {
+  switch (type) {
+    case 'checkbox':
+      return <Checkbox {...props}/>;     
+    default:
+    return <Input {...props}/>;
+  }
+};
 export const FormCreater = (
   props: 
   { 
@@ -37,26 +48,31 @@ export const FormCreater = (
     props.onChange(values);
   }
 
-  // console.log(props.config);
   return (
     <Form
       initialValues={[]}
       fields={fields}
-      onChange={(newfilds: any) => setFilds(newfilds)}
+      onFieldsChange={(_: any, newfilds: any) => {
+        setFilds(newfilds);
+      }}
       onFinish={onFinish}
     >
       {
-        props.config.map(v => {
+        // 越界判断
+        props.config && props.config.length > 0 ? props.config.map(v => {
           return (
             <Form.Item
               key={v.attributeId}
               name={v.attributeId}
               label={v.displayName}
             >
-              xxxx
+              {FormItemComponentMap(v.type)({
+                ...v.cfg,
+                value: undefined
+              })}
             </Form.Item>
           )
-        })
+        }) : null
       }
       <Form.Item>
         <Button type="primary" htmlType="submit">提交</Button>
