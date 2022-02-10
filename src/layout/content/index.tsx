@@ -3,6 +3,7 @@ import React from 'react';
 import { Button, Affix, Upload } from 'antd';
 import { RcFile } from 'antd/lib/upload'
 import SilderDrawer from '../../components/silderDrawer';
+import { CopyConfig } from '../../helpers/copy';
 import './index.less';
 
 const Content = () => {
@@ -15,7 +16,7 @@ const Content = () => {
 
   // 复制配置
   const handleCopyConfig = () => {
-    console.log(121212);
+    CopyConfig('1212')
   }
   return (
     <div className='page-container'>
