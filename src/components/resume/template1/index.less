@@ -1,0 +1,154 @@
+.template-resume {
+  width: 794px;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px 1px rgb(0 0 0 / 15%);
+  padding: 18px 24px 12px;
+
+  .basic-info {
+
+    // 个人信息
+    .profile {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .profile-info {
+
+        flex: 1 1;
+        .info-name {
+          font-size: 24px;
+          line-height: 24px;
+        }
+
+        .profile-list {
+          display: flex;
+          flex-wrap: wrap;
+
+          .list-item {
+            flex: 220px 1;
+            margin-bottom: 4px;
+
+            .iconfont {
+              color:rgb(47, 87, 133);
+              opacity: 0.85;
+              font-size: 14px;
+            }
+            .item-info {
+              font-size: 14px;
+              padding-left: 2px;
+            }
+          }
+        }
+      }
+
+      .avatar {
+        width: 84px;
+        height: 84px;
+        background-color: #353944;
+        border-radius: 100%;
+      }
+    }
+
+    
+  }
+  // 公共样式配置
+  .section {
+    margin-top: 12px;
+    .section-title {
+      color: rgb(47, 87, 133);
+      font-size: 16px;
+      line-height: 18px;
+      letter-spacing: 0;
+      display: flex;
+      position: relative;
+      .title {
+        width: auto;
+      }
+
+      .addon {
+        flex: 1 1;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          width: 100%;
+          top: 50%;
+          left: 16px;
+          height: 1px;
+          transform: translateY(-1px);
+          background-color: currentColor;
+          opacity: .54;
+        }
+      }
+    }
+
+    .section-body {
+      margin-top: 10px;
+      font-size: 14px;
+      .education-item {
+       .university {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         
+         .name {
+           font-size: 16px;
+           color: #000;
+           font-weight: bold;
+
+           >span {
+             padding-left: 4px;
+             font-size: 15px;
+             color: #353944;
+           }
+         }
+         .graduation-time {
+          padding-left: 4px;
+          font-size: 15px;
+          color: #353944;
+         }
+       } 
+
+      
+      }
+      .introduce-myself {
+        margin: 0;
+      }
+
+      .section-item {
+        margin-top: 10px;
+        .section-info {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         .info-name {
+           font-weight: bold;
+
+           >span {
+            color: rgba(0, 0, 0, 0.45);
+            font-size: 12px;
+            margin-left: 8px;
+            font-weight: 300;
+           }
+         }
+
+         .info-time {
+          color: rgba(0, 0, 0, 0.45);
+          font-size: 12px;
+          margin-left: 8px;
+          font-weight: 300;
+         }
+        }
+
+        .work-description {
+          white-space: pre-wrap;
+          font-size: 14px;
+          margin-top: 4px;
+        }
+
+      }
+    }
+  }
+}
