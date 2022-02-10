@@ -67,7 +67,7 @@ export const FormCreater = (
     >
       {
         // 越界判断
-        props.config && props.config.length > 0 ? props.config.map(v => {
+        props.config?.length > 0 ? props.config.map(v => {
           return (
             <Form.Item
               key={v.attributeId}

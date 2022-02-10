@@ -8,8 +8,6 @@ import { CopyConfig } from '../../helpers/copy';
 import './index.less';
 
 const Content = () => {
-
-
   // 导入配置 文件处理
   const importConfig = (file: RcFile) => {
     console.log(file);
