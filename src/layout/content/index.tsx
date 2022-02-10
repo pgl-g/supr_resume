@@ -1,10 +1,22 @@
 import React from 'react';
 
-import { Button, Affix } from 'antd';
+import { Button, Affix, Upload } from 'antd';
+import { RcFile } from 'antd/lib/upload'
 import SilderDrawer from '../../components/silderDrawer';
 import './index.less';
 
 const Content = () => {
+
+
+  // 导入配置 文件处理
+  const importConfig = (file: RcFile) => {
+    console.log(file);
+  }
+
+  // 复制配置
+  const handleCopyConfig = () => {
+    console.log(121212);
+  }
   return (
     <div className='page-container'>
       <div className='template-resume'>
@@ -197,9 +209,16 @@ const Content = () => {
         <Affix offsetTop={0}>
           <Button.Group className="btn-group">
             <SilderDrawer />
-            <Button type="primary" key={'2'}>导入配置</Button>
-            <Button type="primary" key={'3'}>复制配置</Button>
-            <Button type="primary" key={'4'}>下载配置</Button>
+            <Upload
+              accept=".josn"
+              showUploadList={false}
+              beforeUpload={importConfig}
+              key={'2'}
+            >
+              <Button type="primary">导入配置</Button>
+            </Upload>
+            <Button type="primary" onClick={handleCopyConfig} key={'3'}>复制配置</Button>
+            <Button type="primary" key={'4'} onClick={() => window.print()}>下载配置</Button>
           </Button.Group>
         </Affix>
       </React.Fragment>

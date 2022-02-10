@@ -78,7 +78,7 @@ export const FormCreater = (
             >
               {FormItemComponentMap(v.type)({
                 ...v,
-                // TODO：可从外部值传入
+                // TODO：可从外部值传入 静态值
                 value: undefined
               })}
             </Form.Item>
