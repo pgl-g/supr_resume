@@ -76,26 +76,28 @@ export const CONFIG_MOUDLE = () => {
       {
         type: 'input',
         attributeId: 'e-mail',
-        displayName: 'Gitee',
+        displayName: '邮箱',
         formItemProps: { rules: [{ required: true }] },
+      },
+      {
+        type: 'input',
+        attributeId: 'gitee',
+        displayName: 'Gitee',
       },
       {
         type: 'input',
         attributeId: 'address',
         displayName: '地址',
-        formItemProps: { rules: [{ required: true }] },
       },
       {
         type: 'input',
         attributeId: 'wordExpYear',
         displayName: '工作经验',
-        formItemProps: { rules: [{ required: true }] },
       },
       {
         type: 'input',
         attributeId: 'positionTitle',
         displayName: '职位',
-        formItemProps: { rules: [{ required: true }] },
       }
     ],
     /** 教育背景 */

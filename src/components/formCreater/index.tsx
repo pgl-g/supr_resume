@@ -4,6 +4,9 @@ import { FormItemProps } from 'antd/lib/form'
 
 import { Button, Form, Input, Checkbox } from 'antd';
 
+
+const { TextArea } = Input;
+
 // 定义外值接口类
 // TODO：ts报错，可选属性未定义
 // type Props = {
@@ -16,10 +19,13 @@ import { Button, Form, Input, Checkbox } from 'antd';
 const FormItemComponentMap = (type: string) => (
   props: { value: any; onChange?: (v: any) => void } = { value: null }
 ) => {
-  console.log(props);
   switch (type) {
     case 'checkbox':
-      return <Checkbox {...props}/>;     
+      return <Checkbox {...props}/>;
+    case 'input':
+      return <Input {...props} />;
+    case 'textarea':
+      return <TextArea {...props} />     
     default:
     return <Input {...props}/>;
   }
@@ -68,9 +74,11 @@ export const FormCreater = (
               name={v.attributeId}
               label={v.displayName}
               wrapperCol={{ span: 18 }}
+              {...v.formItemProps || {}}
             >
               {FormItemComponentMap(v.type)({
-                ...v.cfg,
+                ...v,
+                // TODO：可从外部值传入
                 value: undefined
               })}
             </Form.Item>
