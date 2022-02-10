@@ -16,6 +16,7 @@ import { Button, Form, Input, Checkbox } from 'antd';
 const FormItemComponentMap = (type: string) => (
   props: { value: any; onChange?: (v: any) => void } = { value: null }
 ) => {
+  console.log(props);
   switch (type) {
     case 'checkbox':
       return <Checkbox {...props}/>;     
@@ -52,6 +53,7 @@ export const FormCreater = (
     <Form
       initialValues={[]}
       fields={fields}
+      labelCol={{ span: 6 }}
       onFieldsChange={(_: any, newfilds: any) => {
         setFilds(newfilds);
       }}
@@ -65,6 +67,7 @@ export const FormCreater = (
               key={v.attributeId}
               name={v.attributeId}
               label={v.displayName}
+              wrapperCol={{ span: 18 }}
             >
               {FormItemComponentMap(v.type)({
                 ...v.cfg,
@@ -74,7 +77,7 @@ export const FormCreater = (
           )
         }) : null
       }
-      <Form.Item>
+      <Form.Item wrapperCol={{ offset: 12 }}>
         <Button type="primary" htmlType="submit">提交</Button>
       </Form.Item>
     </Form>

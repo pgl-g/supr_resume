@@ -28,13 +28,13 @@ export const MOUDLE = () => {
       name: '个人作品', 
       key: 'workList'
     },
-    { 
-      name: '专业技能', 
-      key: 'skillList'},
-    { 
-      name: '工作经历', 
-      key: 'workExpList'
-    },
+    // { 
+    //   name: '专业技能', 
+    //   key: 'skillList'},
+    // { 
+    //   name: '工作经历', 
+    //   key: 'workExpList'
+    // },
     { 
       name: '项目经历', 
       key: 'projectList'
@@ -45,6 +45,7 @@ export const MOUDLE = () => {
 // 配置模版内容
 export const CONFIG_MOUDLE = () => {
   return {
+    /** 头像 */
     avatar: [
       {
         type: 'checkbox',
@@ -58,59 +59,118 @@ export const CONFIG_MOUDLE = () => {
         },
       }
     ],
+    /** 个人信息 */
     profile: [
       {
         type: 'input',
-        attributeId: 'name1',
+        attributeId: 'username',
         displayName: '姓名',
         formItemProps: { rules: [{ required: true }] },
       },
       {
         type: 'input',
-        attributeId: 'name2',
-        displayName: '性别',
+        attributeId: 'mobile',
+        displayName: '手机号码',
+        formItemProps: { rules: [{ required: true }] },
+      },
+      {
+        type: 'input',
+        attributeId: 'e-mail',
+        displayName: 'Gitee',
+        formItemProps: { rules: [{ required: true }] },
+      },
+      {
+        type: 'input',
+        attributeId: 'address',
+        displayName: '地址',
+        formItemProps: { rules: [{ required: true }] },
+      },
+      {
+        type: 'input',
+        attributeId: 'wordExpYear',
+        displayName: '工作经验',
+        formItemProps: { rules: [{ required: true }] },
+      },
+      {
+        type: 'input',
+        attributeId: 'positionTitle',
+        displayName: '职位',
         formItemProps: { rules: [{ required: true }] },
       }
     ],
+    /** 教育背景 */
     educationList: [
       {
         type: 'input',
-        attributeId: 'name',
-        displayName: '教育背景',
+        attributeId: 'time',
+        displayName: '时间',
         formItemProps: { rules: [{ required: true }] },
+      },
+      {
+        type: 'input',
+        attributeId: 'school',
+        displayName: '学校',
+        formItemProps: { rules: [{ required: true }] },
+      },
+      {
+        type: 'input',
+        attributeId: 'major',
+        displayName: '专业',
+        formItemProps: { rules: [{ required: true }] },
+      },
+    ],
+    /** 自我介绍 */
+    aboutme: [
+      {
+        type: 'textarea',
+        attributeId: 'aboutme_area',
+        cfg: { autoSize: { minRows: 4 }, showCount: true },
       }
     ],
+    /** 更多信息 */
     awardList: [
       {
         type: 'input',
-        attributeId: 'name',
-        displayName: '更多信息',
+        attributeId: 'award_time',
+        displayName: '获奖时间',
         formItemProps: { rules: [{ required: true }] },
       }
     ],
-    aboutme: [
-      {
-        type: 'input',
-        attributeId: 'name',
-        displayName: '自我介绍',
-        formItemProps: { rules: [{ required: true }] },
-      }
-    ],
+    /** 个人作品 */
     workList: [
       {
         type: 'input',
-        attributeId: 'name',
-        displayName: '个人作品',
-        formItemProps: { rules: [{ required: true }] },
-      }
+        attributeId: 'woak_name',
+        displayName: '作品名称',
+      },
+      {
+        type: 'input',
+        attributeId: 'woak_desc',
+        displayName: '作品描述',
+      },
+      {
+        type: 'input',
+        attributeId: 'woak_link',
+        displayName: '作品链接',
+      },
     ],
+    /** 项目经历 */
     projectList: [
       {
         type: 'input',
-        attributeId: 'name',
-        displayName: '项目经历',
-        formItemProps: { rules: [{ required: true }] },
-      }
+        attributeId: 'project_name',
+        displayName: '项目名称',
+      },
+      {
+        type: 'input',
+        attributeId: 'role',
+        displayName: '担任角色',
+      },
+      {
+        type: 'input',
+        attributeId: 'project_desc',
+        displayName: '项目描述',
+      },
     ]
   }
 }

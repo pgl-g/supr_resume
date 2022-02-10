@@ -30,12 +30,6 @@ const SilderDrawer: React.FC = props => {
     return CONFIG_MOUDLE();
   }, []);
 
-
-  // 处理提交问题
-  const handleSubmit = (val: any) => {
-    console.log(val);
-  } 
-
   // 处理下拉列表事件数据源 TODO: 后期优化
   const handleCollapse = (values: any) => {
     let result: any = [];
@@ -48,7 +42,10 @@ const SilderDrawer: React.FC = props => {
     setFormListValue(result);
   }
 
-  console.log(formListValue);
+  // 处理提交问题
+  const handleSubmit = (val: any) => {
+    console.log(val);
+  } 
 
   return (
     <>
@@ -77,9 +74,7 @@ const SilderDrawer: React.FC = props => {
                       <FormCreater
                         config={formListValue}
                         value={formValue}
-                        onChange={v => {
-                          console.log(v)
-                        }}
+                        onChange={handleSubmit}
                       />
                     </div>
                   </Panel>
