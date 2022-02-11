@@ -4,10 +4,12 @@ import Template1 from './template1';
 
 
 // 主配置模版
-const Resume = () => {
+const Resume = ({ config }: any) => {
 
   return (
-      <Template1 />
+      <Template1 
+        config={config}
+      />
   )
 }
 

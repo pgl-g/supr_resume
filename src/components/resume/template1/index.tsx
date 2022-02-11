@@ -3,7 +3,8 @@ import React from 'react';
 import './index.less';
 
 // 模版1
-const Template1 = () => {
+const Template1 = ({ config }: any) => {
+  console.log(config);
   return (
     <div className='template-resume'>
         {/* 个人信息 */}
@@ -46,7 +47,10 @@ const Template1 = () => {
                 </div>
               </div>
             </div>
-            <div className='avatar' />
+            {
+              !config?.avatar?.hidden && <div className='avatar' />
+            }
+            
           </div>
           {/* 教育背景 */}
           <div className='section section-education'>

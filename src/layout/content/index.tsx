@@ -1,13 +1,27 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 
 import { Button, Affix, Upload } from 'antd';
 import { RcFile } from 'antd/lib/upload'
 import SilderDrawer from '../../components/silderDrawer';
 import Resume from '../../components/resume';
 import { CopyConfig } from '../../helpers/copy';
+import { CONFIG_MOUDLE } from '../../helpers/contant';
 import './index.less';
 
 const Content = () => {
+
+  const [resumeConfig, updateResumeConfig] = useState();
+
+  // 静态模版数据
+  const config_moudle = useMemo(() => {
+    return CONFIG_MOUDLE();
+  }, []);
+
+  // 处理提交配置
+  const handleSubmitEmit = (val: any) => {
+    updateResumeConfig(val);
+  }
+
   // 导入配置 文件处理
   const importConfig = (file: RcFile) => {
     console.log(file);
@@ -17,14 +31,19 @@ const Content = () => {
   const handleCopyConfig = () => {
     CopyConfig('1212')
   }
+
   return (
     <div className='page-container'>
-      <Resume />
+      <Resume 
+        config={resumeConfig}
+      />
       {/* 配置 */}
       <React.Fragment>
         <Affix offsetTop={0}>
           <Button.Group className="btn-group">
-            <SilderDrawer />
+            <SilderDrawer 
+              handleSubmitEmit={handleSubmitEmit}
+            />
             <Upload
               accept=".josn"
               showUploadList={false}

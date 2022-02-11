@@ -12,13 +12,14 @@ import './index.less';
 const { Panel } = Collapse;
 
 // 抽屉弹窗
-const SilderDrawer: React.FC = props => {
+const SilderDrawer = (props: { handleSubmitEmit: (v: any) => void }) => {
   const [visible, setVisible] = useState<boolean>(false);
   
 
   // 配置内容
   const [formListValue, setFormListValue] = useState([]);
   const [formValue, updateFormValue] = useState({});
+  const [modelKey, setModelKey] = useState('');
 
   // 模版数据源
   const moudles = useMemo(() => {
@@ -39,12 +40,14 @@ const SilderDrawer: React.FC = props => {
       ...result,
       dataIndex: 0
     });
+
+    setModelKey(values);
     setFormListValue(result);
   }
 
   // 处理提交问题
   const handleSubmit = (val: any) => {
-    console.log(val);
+    props.handleSubmitEmit({[modelKey]: val});
   } 
 
   return (
