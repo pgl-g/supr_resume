@@ -14,13 +14,13 @@ const Template1 = ({ config }: any) => {
   // 更多信息
   const awardList = config['awardList'];
   // 个人作品
-  const workList = config('workList');
+  const workList = config['workList'];
   // 个人技能
-  const skillList =  config('skillList');
+  const skillList =  config['skillList'];
   // 工作经历
-  const workExpList = config('workExpList');
+  const workExpList = config['workExpList'];
   // 项目经历
-  const projectList = config('projectList');
+  const projectList = config['projectList'];
 
   return (
     <div className='template-resume'>
