@@ -19,7 +19,6 @@ const Content = () => {
 
   // 处理提交配置
   const handleSubmitEmit = (val: any) => {
-    console.log(val);
     updateResumeConfig(val);
   }
 

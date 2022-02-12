@@ -6,30 +6,57 @@ export type ResumeConfig = {
     src?: string,
     hidden?: boolean
   };
+  // 个人信息
   profile?: {
-    text?: string
+    name?: string,
+    email?: string,
+    mobile?: string,
+    gitee?: string,
+    workExpYear?: string,
+    workPlace?: string,
+    positionTitle?: string
   };
+  // 教育
   educationList?: {
-    text?: string
+    edu_time?: string,
+    school?: string,
+    major?: string,
+    academic_degree?: string
   };
+  // 自我介绍
   aboutme?: {
-    text?: string
+    aboutme_desc?: string
   };
-  awardList?: {
-    text?: string
-  };
-  workList?: {
-    text?: string
-  };
-  skillList?: {
-    text?: string
-  };
-  workExpList?: {
-    text?: string
-  };
-  projectList?: {
-    text?: string
-  };
+  // 更多信息 奖项
+  awardList?: Array<{
+    award_info?: string;
+    award_time?: string;
+  }>;
+  // 作品
+  workList?: Array<{
+    work_name?: string;
+    work_desc?: string;
+    visit_link?: string;
+  }>;
+  // 个人技能
+  skillList?: Array<{
+    skill_name?: string;
+    skill_desc?: string;
+  }>
+  // 工作经历
+  workExpList?: Array<{
+    company_name: string;
+    department_name: string;
+    work_time?: [string | undefined, string | number];
+    work_desc: string;
+  }>;
+  projectList?: Array<{
+    project_name?: string,
+    project_role?: string,
+    project_time?: string,
+    project_desc?: string,
+    project_content?: string
+  }>;
   // 标签名称映射
   titleNameMap?: {
     // 教育背景

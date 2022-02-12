@@ -28,13 +28,13 @@ export const MOUDLE = () => {
       name: '个人作品', 
       key: 'workList'
     },
-    // { 
-    //   name: '专业技能', 
-    //   key: 'skillList'},
-    // { 
-    //   name: '工作经历', 
-    //   key: 'workExpList'
-    // },
+    { 
+      name: '专业技能', 
+      key: 'skillList'},
+    { 
+      name: '工作经历', 
+      key: 'workExpList'
+    },
     { 
       name: '项目经历', 
       key: 'projectList'
@@ -63,7 +63,7 @@ export const CONFIG_MOUDLE = () => {
     profile: [
       {
         type: 'input',
-        attributeId: 'username',
+        attributeId: 'name',
         displayName: '姓名',
         formItemProps: { rules: [{ required: true }] },
       },
@@ -75,7 +75,7 @@ export const CONFIG_MOUDLE = () => {
       },
       {
         type: 'input',
-        attributeId: 'e-mail',
+        attributeId: 'email',
         displayName: '邮箱',
         formItemProps: { rules: [{ required: true }] },
       },
@@ -86,7 +86,7 @@ export const CONFIG_MOUDLE = () => {
       },
       {
         type: 'input',
-        attributeId: 'address',
+        attributeId: 'workPlace',
         displayName: '地址',
       },
       {
@@ -104,7 +104,7 @@ export const CONFIG_MOUDLE = () => {
     educationList: [
       {
         type: 'input',
-        attributeId: 'time',
+        attributeId: 'edu_time',
         displayName: '时间',
         formItemProps: { rules: [{ required: true }] },
       },
@@ -120,6 +120,12 @@ export const CONFIG_MOUDLE = () => {
         displayName: '专业',
         formItemProps: { rules: [{ required: true }] },
       },
+      {
+        type: 'input',
+        attributeId: 'academic_degree',
+        displayName: '学历',
+        formItemProps: { rules: [{ required: true }] },
+      },
     ],
     /** 自我介绍 */
     aboutme: [
@@ -131,6 +137,12 @@ export const CONFIG_MOUDLE = () => {
     ],
     /** 更多信息 */
     awardList: [
+      {
+        type: 'input',
+        attributeId: 'award_info',
+        displayName: '获奖信息',
+        formItemProps: { rules: [{ required: true }] },
+      },
       {
         type: 'input',
         attributeId: 'award_time',
@@ -156,6 +168,40 @@ export const CONFIG_MOUDLE = () => {
         displayName: '作品链接',
       },
     ],
+    workExpList: [
+      {
+        type: 'input',
+        attributeId: 'company_name',
+        displayName: '公司名称',
+      },
+      {
+        type: 'input',
+        attributeId: 'department_name',
+        displayName: '担任职务',
+      },
+      {
+        type: 'input',
+        attributeId: 'work_time',
+        displayName: '时间',
+      },
+      {
+        type: 'input',
+        attributeId: 'work_desc',
+        displayName: '工作描述',
+      },
+    ],
+    skillList: [
+      {
+        type: 'input',
+        attributeId: 'skill_name',
+        displayName: '技能名称',
+      },
+      {
+        type: 'textaea',
+        attributeId: 'skill_desc',
+        displayName: '技能描述',
+      },
+    ],
     /** 项目经历 */
     projectList: [
       {
@@ -165,13 +211,23 @@ export const CONFIG_MOUDLE = () => {
       },
       {
         type: 'input',
-        attributeId: 'role',
+        attributeId: 'project_role',
         displayName: '担任角色',
+      },
+      {
+        type: 'input',
+        attributeId: 'project_time',
+        displayName: '项目时间',
       },
       {
         type: 'input',
         attributeId: 'project_desc',
         displayName: '项目描述',
+      },
+      {
+        type: 'input',
+        attributeId: 'project_content',
+        displayName: '项目内容',
       },
     ]
   }
