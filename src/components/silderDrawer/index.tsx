@@ -12,7 +12,7 @@ import './index.less';
 const { Panel } = Collapse;
 
 // 抽屉弹窗
-const SilderDrawer = (props: { handleSubmitEmit: (v: any) => void }) => {
+const SilderDrawer = (props: { handleSubmitEmit: (v: any) => void}) => {
   const [visible, setVisible] = useState<boolean>(false);
   
 

@@ -1,26 +1,27 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useCallback, useMemo, useEffect } from 'react';
 
 import { Button, Affix, Upload } from 'antd';
 import { RcFile } from 'antd/lib/upload'
 import SilderDrawer from '../../components/silderDrawer';
 import Resume from '../../components/resume';
 import { CopyConfig } from '../../helpers/copy';
+import { RESUME_INFO } from '../../datas/resume';
+import { ResumeConfig } from '../../helpers/types';
 import { CONFIG_MOUDLE } from '../../helpers/contant';
 import './index.less';
 
 const Content = () => {
 
-  const [resumeConfig, updateResumeConfig] = useState();
+  const [resumeConfig, updateResumeConfig] = useState<ResumeConfig>(RESUME_INFO);
 
-  // 静态模版数据
-  const config_moudle = useMemo(() => {
-    return CONFIG_MOUDLE();
-  }, []);
+  const onChangeConfig = (v: Partial<ResumeConfig>) => {
+    updateResumeConfig(Object.assign({}, {}, v))
+  }
 
   // 处理提交配置
-  const handleSubmitEmit = (val: any) => {
-    updateResumeConfig(val);
-  }
+  const handleSubmitEmit = useCallback((v: Partial<ResumeConfig>) => {
+    onChangeConfig(Object.assign({}, resumeConfig, v))
+  }, [resumeConfig]);
 
   // 导入配置 文件处理
   const importConfig = (file: RcFile) => {

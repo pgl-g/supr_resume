@@ -5,11 +5,22 @@ import './index.less';
 
 // 模版1
 const Template1 = ({ config }: any) => {
-  console.log(config, RESUME_INFO);
-
   // 个人信息
-  const profile = RESUME_INFO['profile'];
-  console.log(profile);
+  const profile = config['profile'];
+  // 教育
+  const educationList = config['educationList'];
+  // 自我介绍
+  const aboutme = config['aboutme'];
+  // 更多信息
+  const awardList = config['awardList'];
+  // 个人作品
+  const workList = config('workList');
+  // 个人技能
+  const skillList =  config('skillList');
+  // 工作经历
+  const workExpList = config('workExpList');
+  // 项目经历
+  const projectList = config('projectList');
 
   return (
     <div className='template-resume'>
