@@ -15,7 +15,7 @@ const { TextArea } = Input;
 //   onChange: (v?: any) => void;
 // }
 
-// 动态配置 form组件
+// 动态配置 form 表单内容
 const FormItemComponentMap = (type: string) => (
   props: { value: any; onChange?: (v: any) => void } = { value: null }
 ) => {

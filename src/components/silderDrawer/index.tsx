@@ -47,7 +47,12 @@ const SilderDrawer = (props: { handleSubmitEmit: (v: any) => void }) => {
 
   // 处理提交问题
   const handleSubmit = (val: any) => {
-    props.handleSubmitEmit({[modelKey]: val});
+    if (modelKey.endsWith('List')) {
+      const newVal = [val];
+      props.handleSubmitEmit({[modelKey]: newVal});
+    } else {
+      props.handleSubmitEmit({[modelKey]: val});
+    }
   } 
 
   return (
