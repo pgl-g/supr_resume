@@ -24,7 +24,7 @@ export const RESUME_INFO: ResumeConfig = {
   },
   // 自我介绍
   aboutme: {
-    aboutme_desc: 'xxasxasxasxasxxxxxxxxxxxxasxjnajsxakjbxkjabjkxabsjxbaksbjxaksjx'
+    aboutme_desc: '🌱 努力努力努力努力努力努力 😈 能力项：沟通协调能力、执行力 前端工程师，2年多中型复杂产品开发经验，哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈'
   },
   // 更多信息
   awardList: [

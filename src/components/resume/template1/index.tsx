@@ -78,14 +78,28 @@ const Template1 = ({ config }: any) => {
 
             <div className='section-body'>
               <div className='education-item'>
-                <div className='university'>
-                  <div className='name'>
-                    <b>南昌航天航空大学</b>
-                    <span>软件工程</span>
-                  </div>
+                {
+                  educationList?.length ? educationList.map((item: any, index: number) => (
+                    <div className='university' key={index}>
+                      <div className='name'>
+                        <b>{item.school}</b>
+                        <span>{item.major}</span>
+                      </div>
 
-                  <span className='graduation-time'>2017.9.1-2021.6.30</span>
-                </div>
+                      <span className='graduation-time'>{item.edu_time}</span>
+                    </div>
+                  )) : (
+                    <div className='university'>
+                      <div className='name'>
+                        <b>{educationList?.school}</b>
+                        <span>{educationList?.major}</span>
+                      </div>
+
+                      <span className='graduation-time'>{educationList?.edu_time}</span>
+                    </div>
+                  )
+                }
+                
               </div>
             </div>
           </div>
@@ -98,9 +112,7 @@ const Template1 = ({ config }: any) => {
             </div>
             <div className='section-body'>
               <p className='introduce-myself'>
-                🌱 努力努力努力努力努力努力 😈 能力项：沟通协调能力、执行力
-                前端工程师，2年多中型复杂产品开发经验，哈哈哈哈哈哈哈哈哈哈哈哈哈
-                哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈
+                {aboutme?.aboutme_desc}
               </p>
             </div>
           </div>

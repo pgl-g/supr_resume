@@ -131,7 +131,7 @@ export const CONFIG_MOUDLE = () => {
     aboutme: [
       {
         type: 'textarea',
-        attributeId: 'aboutme_area',
+        attributeId: 'aboutme_desc',
         cfg: { autoSize: { minRows: 4 }, showCount: true },
       }
     ],
