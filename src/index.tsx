@@ -8,8 +8,7 @@ import 'antd/dist/antd.less';
 import App from './page';
 
 ReactDOM.render(
-  <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  ,
   document.getElementById('root')
 );
