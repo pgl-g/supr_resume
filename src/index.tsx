@@ -7,7 +7,6 @@ import './assets/iconfont/iconfont.less';
 import 'antd/dist/antd.less';
 import App from './page/index';
 
-console.log(document.getElementById('root'))
 
 ReactDOM.render(
     <App />
