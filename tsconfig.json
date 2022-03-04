@@ -2,7 +2,8 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es5",
-    "outDir": "lib",
+    "outDir": "./dist",
+    "allowJs": true,
     "declaration": true,
     "importHelpers": true,
     "moduleResolution": "node",

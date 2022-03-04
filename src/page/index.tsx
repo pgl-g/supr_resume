@@ -4,7 +4,7 @@ import Header from '../layout/header';
 import Content from '../layout/content';
 
 
-const Page = () => {
+const App = () => {
   return (
     <React.Fragment>
       <Header />
@@ -13,4 +13,4 @@ const Page = () => {
   );
 }
 
-export default Page;
+export default App;
