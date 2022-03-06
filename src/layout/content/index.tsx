@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useMemo, useEffect } from 'react';
 
-import { Button, Affix, Upload } from 'antd';
+import { Affix, Upload, Button } from 'antd';
 import { RcFile } from 'antd/lib/upload'
 import SilderDrawer from '../../components/silderDrawer';
 import Resume from '../../components/resume';
@@ -11,7 +11,6 @@ import { CONFIG_MOUDLE } from '../../helpers/contant';
 import './index.less';
 
 const Content = () => {
-
   const [resumeConfig, updateResumeConfig] = useState<ResumeConfig>(RESUME_INFO);
 
   const onChangeConfig = (v: Partial<ResumeConfig>) => {
@@ -60,6 +59,6 @@ const Content = () => {
       </React.Fragment>
     </div>
   );
-};
+}
 
 export default Content;

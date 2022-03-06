@@ -60,7 +60,6 @@ const SilderDrawer = (props: { handleSubmitEmit: (v: any) => void}) => {
       <Button type="primary" onClick={() => setVisible(true)}>
         进行配置
       </Button>
-
       <Drawer
         title="配置模版"
         visible={visible}
