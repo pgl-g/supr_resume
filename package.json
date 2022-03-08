@@ -68,6 +68,7 @@
   "scripts": {
     "dev": "webpack-dev-server --config ./build/webpack.dev.js",
     "build": "webpack --config ./build/webpack.prod.js",
+    "build:dll": "webpack --config ./build/webpack.dll.js",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {
