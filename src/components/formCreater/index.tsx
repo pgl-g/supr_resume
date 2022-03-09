@@ -19,6 +19,7 @@ const { TextArea } = Input;
 const FormItemComponentMap = (type: string) => (
   props: { value: any; onChange?: (v: any) => void } = { value: null }
 ) => {
+  console.log(props, 2)
   switch (type) {
     case 'checkbox':
       return <Checkbox {...props}/>;
@@ -66,12 +67,12 @@ export const FormCreater = (
       onFinish={onFinish}
     >
       {
-        props.config?.length > 0 ? props.config.map(v => {
+        props.config?.length > 0 ? props.config.map((v) => {
           return (
             <Form.Item
-              key={v.attributeId}
-              name={v.attributeId}
-              label={v.displayName}
+              key={v?.attributeId}
+              name={v?.attributeId}
+              label={v?.displayName}
               wrapperCol={{ span: 18 }}
               {...v.formItemProps || {}}
             >

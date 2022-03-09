@@ -53,7 +53,9 @@ module.exports = {
     // 生成html文件
     new HtmlWebpackPlugin({
       template: path.join(__dirname, '../src/index.html'),
-      title: 'supr_resume'
+      filename: 'index.html',
+      title: 'supr_resume',
+      favicon: path.resolve(__dirname, '../src/favicon.ico'),
     }),
     // css进行打包处理
     new MiniCssExtractPlugin()
