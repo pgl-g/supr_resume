@@ -20,17 +20,10 @@ export const MOUDLE = () => {
       name: '自我介绍',
       key: 'aboutme'
     },
-    {
-      name: '更多信息',
-      key: 'awardList'
-    },
     { 
-      name: '个人作品', 
-      key: 'workList'
+      name: '个人技能', 
+      key: 'skillList'
     },
-    { 
-      name: '专业技能', 
-      key: 'skillList'},
     { 
       name: '工作经历', 
       key: 'workExpList'
@@ -39,6 +32,14 @@ export const MOUDLE = () => {
       name: '项目经历', 
       key: 'projectList'
     },
+    // {
+    //   name: '更多信息',
+    //   key: 'awardList'
+    // },
+    // { 
+    //   name: '个人作品', 
+    //   key: 'workList'
+    // },
   ]
 }
 
