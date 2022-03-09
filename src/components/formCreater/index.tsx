@@ -66,7 +66,6 @@ export const FormCreater = (
       onFinish={onFinish}
     >
       {
-        // 越界判断
         props.config?.length > 0 ? props.config.map(v => {
           return (
             <Form.Item

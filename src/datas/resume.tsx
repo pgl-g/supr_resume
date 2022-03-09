@@ -7,18 +7,18 @@ export const RESUME_INFO: ResumeConfig = {
   },
   // 个人信息
   profile: {
-    name: '姓名',
+    name: '张三',
     email: '736****86@qq.com',
     mobile: '156********',
     gitee: 'https://github.com/visiky',
-    workExpYear: '25k',
+    workExpYear: '20-25k',
     workPlace: '浙江杭州',
-    positionTitle: '前端工程师',
+    positionTitle: '前端开发工程师',
   },
   // 教育
   educationList: {
-    edu_time: '2017-222',
-    school: '南昌航天航空大学',
+    edu_time: '2021-2025',
+    school: '南昌航空大学',
     major: '软件工程',
     academic_degree: '本科'
   },
@@ -26,7 +26,7 @@ export const RESUME_INFO: ResumeConfig = {
   aboutme: {
     aboutme_desc: '🌱 努力努力努力努力努力努力 😈 能力项：沟通协调能力、执行力 前端工程师，2年多中型复杂产品开发经验，哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈啊哈哈哈哈'
   },
-  // 更多信息
+  // 获奖信息
   awardList: [
     {
       award_info: '获奖信息',

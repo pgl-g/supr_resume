@@ -21,12 +21,12 @@ const SilderDrawer = (props: { handleSubmitEmit: (v: any) => void}) => {
   const [formValue, updateFormValue] = useState({});
   const [modelKey, setModelKey] = useState('');
 
-  // 模版数据源
+  // 模版列表key
   const moudles = useMemo(() => {
     return MOUDLE();
   }, []);
 
-  // 下拉模版配置
+  // 模版列表key value
   const configMouldes = useMemo(() => {
     return CONFIG_MOUDLE();
   }, []);
@@ -34,8 +34,9 @@ const SilderDrawer = (props: { handleSubmitEmit: (v: any) => void}) => {
   // 处理下拉列表事件数据源 TODO: 后期优化
   const handleCollapse = (values: any) => {
     let result: any = [];
-    // @ts-ignore
+    // @ts-ignore 获取列表value
     result = configMouldes[values]
+    
     updateFormValue({
       ...result,
       dataIndex: 0

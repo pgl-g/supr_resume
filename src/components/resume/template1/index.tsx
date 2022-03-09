@@ -11,7 +11,7 @@ const Template1 = ({ config }: any) => {
   const educationList = config['educationList'];
   // 自我介绍
   const aboutme = config['aboutme'];
-  // 更多信息
+  // 获奖信息
   const awardList = config['awardList'];
   // 个人作品
   const workList = config['workList'];
@@ -21,6 +21,8 @@ const Template1 = ({ config }: any) => {
   const workExpList = config['workExpList'];
   // 项目经历
   const projectList = config['projectList'];
+
+  console.log(skillList);
 
   return (
     <div className='template-resume'>
@@ -125,28 +127,21 @@ const Template1 = ({ config }: any) => {
             </div>
             <div className='section-body'>
               <ol>
-                <li>
-                  在工作中可以熟练使用运用html+css来制作符合W3C规范标准的页面，利用自己的工作经验可以有效的解决浏览、兼容问题。
-                </li>
-                <li>
-                  在工作中可以使用原生js开发，有良好的代码注释习惯以及变量命名习惯。
-                </li>
-                <li>
-                  在工作中熟练使用css预处理器(less、sass)进行项目样式单元的开发
-                </li>
-                <li>
-                  在工作中熟练各种流程工具和构建打包工具:git,操作码云、github,webpack包管理工具npm
-                </li>
-                <li>
-                  在工作中经常和后台配合联调接口，在配合过程中也了解了后端的基本知识，了解数据库来源以及连接mysql的增删改查等部分操作
-                </li>
+                {
+                  skillList?.map((item: any, idx: number) => (
+                    <li key={idx}>
+                      {item.skill_desc}
+                    </li>
+                  ))
+                }
               </ol>
             </div>
           </div>
         </div>
 
-        {/* 工作内容 */}
+        
         <div className='main-info'>
+          {/* 工作内容 */}
           <div className='section worker'>
             <div className='section-title'>
               <span className='title'>工作内容</span>
@@ -189,7 +184,7 @@ const Template1 = ({ config }: any) => {
               </div>
             </div>
           </div>
-
+          {/* 项目经历 */}
           <div className='section project'>
             <div className='section-title'>
               <span className='title'>项目经历</span>
