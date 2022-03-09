@@ -59,7 +59,7 @@ const Template1 = ({ config }: any) => {
                   <span className='item-info'>{profile?.positionTitle}</span>
                 </div>
                 <div className='list-item'>
-                  <span className='iconfont icon-dianhua1' />
+                  <span className='iconfont icon-xinzi' />
                   <span className='item-info'>{profile?.workExpYear}</span>
                 </div>
               </div>
