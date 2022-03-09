@@ -4,8 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-// const entryPath = path.resolve(__dirname, '/src/index');
-
 // 配置公共绝对路径
 const commonPath = (_path) => path.resolve(__dirname, _path);
 
