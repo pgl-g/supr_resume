@@ -1,7 +1,5 @@
-import React from 'react';
-
-
-export const MOUDLE = () => {
+// 配置key
+const MOUDLE = () => {
   return [
     {
       name: '头像设置',
@@ -43,8 +41,8 @@ export const MOUDLE = () => {
   ]
 }
 
-// 配置模版内容
-export const CONFIG_MOUDLE = () => {
+// 配置模版内容value
+const CONFIG_MOUDLE = () => {
   return {
     /** 头像 */
     avatar: [
@@ -234,3 +232,8 @@ export const CONFIG_MOUDLE = () => {
   }
 }
 
+
+export {
+  MOUDLE,
+  CONFIG_MOUDLE
+}
