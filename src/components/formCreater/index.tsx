@@ -17,9 +17,9 @@ const { TextArea } = Input;
 
 // 动态配置 form 表单内容
 const FormItemComponentMap = (type: string) => (
-  props: { value: any; onChange?: (v: any) => void } = { value: null }
+  props: { value: any; }
 ) => {
-  console.log(props, 2)
+  // console.log(props, 2)
   switch (type) {
     case 'checkbox':
       return <Checkbox {...props}/>;
@@ -67,7 +67,8 @@ export const FormCreater = (
       onFinish={onFinish}
     >
       {
-        props.config?.length > 0 ? props.config.map((v) => {
+        props.config?.length > 0 ? props.config.map((v, i) => {
+          console.log(v)
           return (
             <Form.Item
               key={v?.attributeId}
