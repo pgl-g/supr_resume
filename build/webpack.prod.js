@@ -5,7 +5,6 @@ const webpack = require('webpack');
 // 清理上一次缓存文件
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
@@ -13,7 +12,7 @@ module.exports = merge(common, {
   // 生产环境打包优化, 错误跟踪
   devtool: 'source-map',
 
-
+  // 进行打包优化
   optimization: {
     runtimeChunk: {
       name: 'manifest'

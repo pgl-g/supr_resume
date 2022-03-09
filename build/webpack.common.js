@@ -4,20 +4,22 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const entryPath = path.resolve(__dirname, '/src/index');
+// const entryPath = path.resolve(__dirname, '/src/index');
+
+// 配置公共绝对路径
+const commonPath = (_path) => path.resolve(__dirname, _path);
 
 module.exports = {
-  mode: 'development',
-  entry: entryPath,
+  entry: commonPath('../src/index'),
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: commonPath('../dist'),
     filename: '[name].js',
   },
   // 支持多种文件
   resolve: {
     extensions: ['.tsx', '.ts', '.js', '.jsx', '.json'],
     alias: {
-      '@': path.resolve(__dirname, '../src')
+      '@': commonPath('../src')
     },
     mainFields: ['main'],
   },
@@ -31,7 +33,6 @@ module.exports = {
       },
       {
         test: /\.tsx?$/,
-        // 如果用了ts文件,使用下面loader翻译成js
         use: 'ts-loader',
         exclude: /node_modules/, // 表示node_modules的tsx文件不做处理
       },
