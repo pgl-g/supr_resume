@@ -45,10 +45,11 @@ export type ResumeConfig = {
   }>
   // 工作经历
   workExpList?: Array<{
-    company_name: string;
-    department_name: string;
-    work_time?: [string | undefined, string | number];
-    work_desc: string;
+    company_name?: string;
+    department_name?: string;
+    // work_time?: [string | undefined, string | number];
+    work_time?: string,
+    work_desc?: string;
   }>;
   projectList?: Array<{
     project_name?: string,

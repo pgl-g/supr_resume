@@ -5,24 +5,24 @@ import './index.less';
 
 // 模版1
 const Template1 = ({ config }: any) => {
-  // 个人信息
+  /** 个人信息 */ 
   const profile = config['profile'];
-  // 教育
+  /** 教育 */ 
   const educationList = config['educationList'];
-  // 自我介绍
+  /** 自我介绍 */ 
   const aboutme = config['aboutme'];
-  // 获奖信息
-  const awardList = config['awardList'];
-  // 个人作品
-  const workList = config['workList'];
-  // 个人技能
+  /** 个人技能 */ 
   const skillList =  config['skillList'];
-  // 工作经历
+  /** 工作经历 */ 
   const workExpList = config['workExpList'];
-  // 项目经历
+  /** 项目经历 */ 
   const projectList = config['projectList'];
+  /** 获奖信息 */ 
+  const awardList = config['awardList'];
+  /** 个人作品 */ 
+  const workList = config['workList'];
 
-  console.log(skillList);
+  console.log(workExpList);
 
   return (
     <div className='template-resume'>
@@ -148,40 +148,25 @@ const Template1 = ({ config }: any) => {
               <span className='addon' />
             </div>
             <div className='section-body'>
-              <div className='section-item worker-content'>
-                <div className='section-info'>
-                  <b className='info-name'>
-                    杭州众选科技有限公司
-                    <span>技术部</span>
-                  </b>
-                  <span className='info-time'>2020.3-2021.4</span>
-                </div>
+              {
+                workExpList?.map((item: any, i: number) => {
+                  return (
+                    <div className='section-item worker-content' key={i}>
+                      <div className='section-info'>
+                        <b className='info-name'>
+                          {item?.company_name}
+                          <span>{item?.department_name}</span>
+                        </b>
+                        <span className='info-time'>{item?.work_time}</span>
+                      </div>
 
-                <div className='work-description'>
-                  1. 担任蚂蚁高管决策和管理协同产品 “数据作战室” 的前端负责人
-                  <br />
-                  2. 负责蚂蚁敏捷 BI 产品 “DeepInsight”
-                  的可视分析模块产品能力建设
-                  <br />
-                  3. 数据可视化 AntV 团队核心成员，负责 G2、G2Plot
-                  开源技术的建设
-                </div>
-              </div>
-
-              <div className='section-item worker-content'>
-                <div className='section-info'>
-                  <b className='info-name'>
-                    江西科技技术有限公司
-                    <span>技术部</span>
-                  </b>
-                  <span className='info-time'>2017.3-2018.3</span>
-                </div>
-
-                <div className='work-description'>
-                  前端实习生。使用 Vue 来实现平台功能和逻辑，再用 ECharts
-                  来对数据挖掘分析后的可视化结果进行展示
-                </div>
-              </div>
+                      <div className='work-description'>
+                        {item?.work_desc}
+                      </div>
+                    </div>
+                  )
+                })
+              }
             </div>
           </div>
           {/* 项目经历 */}
@@ -191,28 +176,35 @@ const Template1 = ({ config }: any) => {
               <span className='addon' />
             </div>
             <div className='section-body'>
-              <div className='section-item worker-content'>
-                <div className='section-info'>
-                  <b className='info-name'>
-                    数据作战室
-                    <span>2019.04 - 2020.06</span>
-                  </b>
-                  <span className='info-time'>前端负责人</span>
-                </div>
+              {
+                projectList?.map((item: any, idx: number) => {
+                  return (
+                    <div className='section-item worker-content' key={idx}>
+                      <div className='section-info'>
+                        <b className='info-name'>
+                          {item?.project_name}
+                          <span>{item?.project_time}</span>
+                        </b>
+                        <span className='info-time'>{item?.project_role}</span>
+                      </div>
 
-                <div className='section-detail'>
-                  <span>主要工作：</span>
-                  <span className='project-content'>
-                    面向总裁和高管以及决策 BI 的数字化经营决策和管理协同产品。提供一站式的数据化经营决策和管理协同功能，让高管高效获取决策信息，并提升管理效率。
-                  </span>
-                </div>
-                <div className='section-detail'>
-                  <span>项目描述：</span>
-                  <span className='project-content'>
-                    面向总裁和高管以及决策 BI 的数字化经营决策和管理协同产品。提供一站式的数据化经营决策和管理协同功能，让高管高效获取决策信息，并提升管理效率。
-                  </span>
-                </div>
-              </div>
+                      <div className='section-detail'>
+                        <span>主要工作：</span>
+                        <span className='project-content'>
+                          {item?.project_content}
+                        </span>
+                      </div>
+                      <div className='section-detail'>
+                        <span>项目描述：</span>
+                        <span className='project-content'>
+                          {item?.project_desc}
+                        </span>
+                      </div>
+                    </div>
+                  )
+                })
+              }
+              
             </div>
           </div>
         </div>
