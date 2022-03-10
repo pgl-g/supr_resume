@@ -3,9 +3,43 @@
   height: 56px;
   line-height: 56px;
   background-color: #202329;
-  .header-title {
-    padding-left: 20px;
-    color: #fff;
-    font-size: 14px;
+
+  display: flex;
+
+  .header-left {
+    flex: 1;
+    .header-title {
+      padding-left: 20px;
+      color: #fff;
+      font-size: 14px;
+    }
   }
+
+  .header-right {
+    padding-right: 20px;
+    .no-login {
+      font-size: 14px;
+      font-weight: 400;
+      .btn-login {
+        margin-right: 20px;
+        background-color: #202329;
+        border-color: #202329;
+        color: rgba(255,255,255,0.8);
+
+        &:hover {
+          color: #fff;
+        }
+      }
+      .registered {
+        background-color: #202329;
+        border-color: #353944;
+        color: rgba(255,255,255,0.8);
+        &:hover {
+          color: #fff;
+          border-color: #fff;
+        }
+      }
+    }
+  }
+  
 }

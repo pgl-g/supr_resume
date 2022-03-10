@@ -22,7 +22,6 @@ const Template1 = ({ config }: any) => {
   /** 个人作品 */ 
   const workList = config['workList'];
 
-  console.log(workExpList);
 
   return (
     <div className='template-resume'>
